@@ -3,3 +3,11 @@ public
 dist
 pnpm-lock.yaml
 pnpm-workspace.yaml
+
+apps/web/dist/
+apps/web/node_modules/
+apps/web/.next/
+apps/web/.turbo/
+apps/web/coverage/
+apps/web/pnpm-lock.yaml
+apps/web/.pnpm-store/
