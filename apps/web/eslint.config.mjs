@@ -6,7 +6,19 @@ import baseConfig from "../../eslint.config.mjs";
 const eslintConfig = defineConfig([
     ...baseConfig,
     ...nextVitals,
+    {
+        languageOptions: {
+            parserOptions: {
+                tsconfigRootDir: import.meta.dirname,
+            },
+        },
+    },
     ...nextTs,
+    {
+        rules: {
+            "prettier/prettier": ["error", { endOfLine: "auto" }],
+        },
+    },
     // Override default ignores of eslint-config-next.
     globalIgnores([
         // Default ignores of eslint-config-next:
