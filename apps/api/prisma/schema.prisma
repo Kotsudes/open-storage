@@ -1,0 +1,165 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+    provider     = "prisma-client"
+    output       = "generated"
+    moduleFormat = "cjs"
+}
+
+datasource db {
+    provider = "postgresql"
+}
+
+enum Role {
+    OWNER
+    ADMIN
+    MEMBER
+}
+
+enum InventoryType {
+    FRIDGE
+    FREEZER
+    PANTRY
+    CLOSET
+    CELLAR
+    OTHER
+}
+
+model User {
+    id            String       @id
+    name          String
+    email         String       @unique
+    emailVerified Boolean
+    image         String?
+    createdAt     DateTime     @db.Timestamptz(3)
+    updatedAt     DateTime     @db.Timestamptz(3)
+    sessions      Session[]
+    accounts      Account[]
+    memberships   Membership[]
+
+    @@map("user")
+}
+
+model Session {
+    id        String   @id
+    user      User     @relation(fields: [userId], references: [id])
+    userId    String
+    token     String   @unique
+    expiresAt DateTime @db.Timestamptz(3)
+    ipAddress String?
+    userAgent String?
+    createdAt DateTime @db.Timestamptz(3)
+    updatedAt DateTime @db.Timestamptz(3)
+
+    @@map("session")
+}
+
+model Account {
+    id                    String    @id
+    user                  User      @relation(fields: [userId], references: [id])
+    userId                String
+    accountId             String
+    providerId            String
+    accessToken           String?
+    refreshToken          String?
+    accessTokenExpiresAt  DateTime? @db.Timestamptz(3)
+    refreshTokenExpiresAt DateTime? @db.Timestamptz(3)
+    scope                 String?
+    idToken               String?
+    password              String?
+    createdAt             DateTime  @db.Timestamptz(3)
+    updatedAt             DateTime  @db.Timestamptz(3)
+
+    @@map("account")
+}
+
+model Verification {
+    id         String   @id
+    identifier String
+    value      String
+    expiresAt  DateTime @db.Timestamptz(3)
+    createdAt  DateTime @db.Timestamptz(3)
+    updatedAt  DateTime @db.Timestamptz(3)
+
+    @@map("verification")
+}
+
+model Warehouse {
+    id          BigInt       @id
+    name        String
+    address     String?
+    createdAt   DateTime     @db.Timestamptz(3)
+    updatedAt   DateTime     @db.Timestamptz(3)
+    memberships Membership[]
+    inventories Inventory[]
+
+    @@map("warehouse")
+}
+
+model Membership {
+    id          BigInt    @id
+    user        User      @relation(fields: [userId], references: [id])
+    userId      String
+    warehouse   Warehouse @relation(fields: [warehouseId], references: [id])
+    warehouseId BigInt
+    role        Role
+    createdAt   DateTime  @db.Timestamptz(3)
+    updatedAt   DateTime  @db.Timestamptz(3)
+
+    @@map("membership")
+}
+
+model Inventory {
+    id             BigInt          @id
+    warehouse      Warehouse       @relation(fields: [warehouseId], references: [id])
+    warehouseId    BigInt
+    name           String
+    temperature    Float?
+    type           InventoryType
+    createdAt      DateTime        @db.Timestamptz(3)
+    updatedAt      DateTime        @db.Timestamptz(3)
+    inventoryItems InventoryItem[]
+
+    @@map("inventory")
+}
+
+model Unit {
+    id          Int      @id
+    name        String
+    description String?
+    symbol      String?
+    createdAt   DateTime @db.Timestamptz(3)
+    updatedAt   DateTime @db.Timestamptz(3)
+    items       Item[]
+
+    @@map("unit")
+}
+
+model Item {
+    id             BigInt          @id
+    unit           Unit            @relation(fields: [unitId], references: [id])
+    unitId         Int
+    name           String
+    createdAt      DateTime        @db.Timestamptz(3)
+    updatedAt      DateTime        @db.Timestamptz(3)
+    inventoryItems InventoryItem[]
+
+    @@map("item")
+}
+
+model InventoryItem {
+    id          BigInt    @id
+    inventory   Inventory @relation(fields: [inventoryId], references: [id])
+    inventoryId BigInt
+    item        Item      @relation(fields: [itemId], references: [id])
+    itemId      BigInt
+    quantity    Float
+    expiryDate  DateTime?
+    createdAt   DateTime  @db.Timestamptz(3)
+    updatedAt   DateTime  @db.Timestamptz(3)
+
+    @@map("inventory_item")
+}

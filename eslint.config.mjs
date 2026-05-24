@@ -11,6 +11,9 @@ export const baseConfig = defineConfig([
         extends: [js.configs.recommended],
         languageOptions: {
             globals: globals.browser,
+            parserOptions: {
+                tsconfigRootDir: import.meta.dirname,
+            },
         },
         ignores: [
             "coverage",

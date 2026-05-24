@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/sidebar";
 
 import { authClient } from "@/lib/auth-client";
+import { toast } from "sonner";
 
 export function NavUser() {
     const router = useRouter();
@@ -29,7 +30,11 @@ export function NavUser() {
     const { isMobile } = useSidebar();
     const { data: session, isPending, error } = authClient.useSession();
 
-    console.log(session, isPending, error);
+    if (error) {
+        toast.error("Failed to load user session", {
+            description: error.message,
+        });
+    }
 
     if (session === null && !isPending) {
         return (

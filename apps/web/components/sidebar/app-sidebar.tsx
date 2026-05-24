@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import { BookOpen, Bot, Settings2, SquareTerminal } from "lucide-react";
-
-import { NavMain } from "@/components/sidebar/nav-main";
+import { NavTree } from "@/components/sidebar/nav-tree";
+import { NavFlat } from "@/components/sidebar/nav-flat";
 import { NavUser } from "@/components/sidebar/nav-user";
 import { WarehouseSwitcher } from "@/components/sidebar/warehouse-switcher";
 import {
@@ -14,89 +14,82 @@ import {
     SidebarRail,
 } from "@/components/ui/sidebar";
 
-// This is sample data.
 const data = {
-    navMain: [
+    navWarehouse: [
         {
-            title: "Playground",
+            title: "Storage",
             url: "#",
             icon: SquareTerminal,
             isActive: true,
             items: [
                 {
-                    title: "History",
-                    url: "#",
+                    title: "Inventories",
+                    url: "/warehouses/inventories",
                 },
                 {
-                    title: "Starred",
-                    url: "#",
-                },
-                {
-                    title: "Settings",
-                    url: "#",
+                    title: "Stock",
+                    url: "/warehouses/stock",
                 },
             ],
         },
         {
-            title: "Models",
+            title: "Catalog",
             url: "#",
             icon: Bot,
             items: [
                 {
-                    title: "Genesis",
-                    url: "#",
+                    title: "Products",
+                    url: "/products",
                 },
                 {
-                    title: "Explorer",
-                    url: "#",
-                },
-                {
-                    title: "Quantum",
-                    url: "#",
+                    title: "Units",
+                    url: "/units",
                 },
             ],
         },
+    ],
+    navManagement: [
         {
-            title: "Documentation",
-            url: "#",
-            icon: BookOpen,
-            items: [
-                {
-                    title: "Introduction",
-                    url: "#",
-                },
-                {
-                    title: "Get Started",
-                    url: "#",
-                },
-                {
-                    title: "Tutorials",
-                    url: "#",
-                },
-                {
-                    title: "Changelog",
-                    url: "#",
-                },
-            ],
-        },
-        {
-            title: "Settings",
+            title: "Warehouse",
             url: "#",
             icon: Settings2,
             items: [
                 {
-                    title: "General",
+                    title: "Members",
+                    url: "/warehouses/members",
+                },
+                {
+                    title: "Roles & Permissions",
+                    url: "/warehouses/roles",
+                },
+            ],
+        },
+        {
+            title: "Monitoring",
+            url: "#",
+            icon: BookOpen,
+            items: [
+                {
+                    title: "Alerts",
                     url: "#",
                 },
                 {
-                    title: "Team",
-                    url: "#",
-                },
-                {
-                    title: "Limits",
+                    title: "Activity Logs",
                     url: "#",
                 },
             ],
+        },
+    ],
+    navPreferences: [
+        {
+            title: "Settings",
+            url: "#",
+            icon: Settings2,
+        },
+        {
+            title: "Notifications",
+            url: "#",
+            icon: Bot,
         },
     ],
 };
@@ -108,7 +101,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <WarehouseSwitcher />
             </SidebarHeader>
             <SidebarContent>
-                <NavMain items={data.navMain} />
+                <NavTree label="WAREHOUSE" items={data.navWarehouse} />
+                <NavTree label="MANAGEMENT" items={data.navManagement} />
+                <NavFlat
+                    label="PREFERENCES"
+                    items={data.navPreferences}
+                    className="mt-auto"
+                />
             </SidebarContent>
             <SidebarFooter>
                 <NavUser />
