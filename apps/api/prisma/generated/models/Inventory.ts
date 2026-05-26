@@ -337,24 +337,24 @@ export type InventoryScalarWhereWithAggregatesInput = {
 };
 
 export type InventoryCreateInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     warehouse: Prisma.WarehouseCreateNestedOneWithoutInventoriesInput;
     inventoryItems?: Prisma.InventoryItemCreateNestedManyWithoutInventoryInput;
 };
 
 export type InventoryUncheckedCreateInput = {
-    id: bigint | number;
+    id?: bigint | number;
     warehouseId: bigint | number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     inventoryItems?: Prisma.InventoryItemUncheckedCreateNestedManyWithoutInventoryInput;
 };
 
@@ -391,13 +391,13 @@ export type InventoryUncheckedUpdateInput = {
 };
 
 export type InventoryCreateManyInput = {
-    id: bigint | number;
+    id?: bigint | number;
     warehouseId: bigint | number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type InventoryUpdateManyMutationInput = {
@@ -631,22 +631,22 @@ export type InventoryUpdateOneRequiredWithoutInventoryItemsNestedInput = {
 };
 
 export type InventoryCreateWithoutWarehouseInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     inventoryItems?: Prisma.InventoryItemCreateNestedManyWithoutInventoryInput;
 };
 
 export type InventoryUncheckedCreateWithoutWarehouseInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     inventoryItems?: Prisma.InventoryItemUncheckedCreateNestedManyWithoutInventoryInput;
 };
 
@@ -707,23 +707,23 @@ export type InventoryScalarWhereInput = {
 };
 
 export type InventoryCreateWithoutInventoryItemsInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     warehouse: Prisma.WarehouseCreateNestedOneWithoutInventoriesInput;
 };
 
 export type InventoryUncheckedCreateWithoutInventoryItemsInput = {
-    id: bigint | number;
+    id?: bigint | number;
     warehouseId: bigint | number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type InventoryCreateOrConnectWithoutInventoryItemsInput = {
@@ -785,12 +785,12 @@ export type InventoryUncheckedUpdateWithoutInventoryItemsInput = {
 };
 
 export type InventoryCreateManyWarehouseInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type InventoryUpdateWithoutWarehouseInput = {

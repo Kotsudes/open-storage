@@ -359,23 +359,23 @@ export type InventoryItemScalarWhereWithAggregatesInput = {
 };
 
 export type InventoryItemCreateInput = {
-    id: bigint | number;
+    id?: bigint | number;
     quantity: number;
     expiryDate?: Date | string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     inventory: Prisma.InventoryCreateNestedOneWithoutInventoryItemsInput;
     item: Prisma.ItemCreateNestedOneWithoutInventoryItemsInput;
 };
 
 export type InventoryItemUncheckedCreateInput = {
-    id: bigint | number;
+    id?: bigint | number;
     inventoryId: bigint | number;
     itemId: bigint | number;
     quantity: number;
     expiryDate?: Date | string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type InventoryItemUpdateInput = {
@@ -407,13 +407,13 @@ export type InventoryItemUncheckedUpdateInput = {
 };
 
 export type InventoryItemCreateManyInput = {
-    id: bigint | number;
+    id?: bigint | number;
     inventoryId: bigint | number;
     itemId: bigint | number;
     quantity: number;
     expiryDate?: Date | string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type InventoryItemUpdateManyMutationInput = {
@@ -725,21 +725,21 @@ export type FloatFieldUpdateOperationsInput = {
 };
 
 export type InventoryItemCreateWithoutInventoryInput = {
-    id: bigint | number;
+    id?: bigint | number;
     quantity: number;
     expiryDate?: Date | string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     item: Prisma.ItemCreateNestedOneWithoutInventoryItemsInput;
 };
 
 export type InventoryItemUncheckedCreateWithoutInventoryInput = {
-    id: bigint | number;
+    id?: bigint | number;
     itemId: bigint | number;
     quantity: number;
     expiryDate?: Date | string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type InventoryItemCreateOrConnectWithoutInventoryInput = {
@@ -807,21 +807,21 @@ export type InventoryItemScalarWhereInput = {
 };
 
 export type InventoryItemCreateWithoutItemInput = {
-    id: bigint | number;
+    id?: bigint | number;
     quantity: number;
     expiryDate?: Date | string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     inventory: Prisma.InventoryCreateNestedOneWithoutInventoryItemsInput;
 };
 
 export type InventoryItemUncheckedCreateWithoutItemInput = {
-    id: bigint | number;
+    id?: bigint | number;
     inventoryId: bigint | number;
     quantity: number;
     expiryDate?: Date | string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type InventoryItemCreateOrConnectWithoutItemInput = {
@@ -868,12 +868,12 @@ export type InventoryItemUpdateManyWithWhereWithoutItemInput = {
 };
 
 export type InventoryItemCreateManyInventoryInput = {
-    id: bigint | number;
+    id?: bigint | number;
     itemId: bigint | number;
     quantity: number;
     expiryDate?: Date | string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type InventoryItemUpdateWithoutInventoryInput = {
@@ -916,12 +916,12 @@ export type InventoryItemUncheckedUpdateManyWithoutInventoryInput = {
 };
 
 export type InventoryItemCreateManyItemInput = {
-    id: bigint | number;
+    id?: bigint | number;
     inventoryId: bigint | number;
     quantity: number;
     expiryDate?: Date | string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type InventoryItemUpdateWithoutItemInput = {

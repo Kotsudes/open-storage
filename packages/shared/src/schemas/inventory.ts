@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { warehouseSchema } from "./warehouse";
+import { inventoryItemNestedSchema } from "./inventoryItem";
 
 export const inventoryTypeEnum = z.enum([
     "FRIDGE",
@@ -12,16 +13,34 @@ export const inventoryTypeEnum = z.enum([
 
 export type InventoryType = z.infer<typeof inventoryTypeEnum>;
 
-export const inventorySchema = z.object({
+export const inventoryNestedSchema = z.object({
     id: z.bigint(),
-
-    warehouse: warehouseSchema,
 
     name: z.string().min(1),
 
     temperature: z.number().optional(),
 
     type: inventoryTypeEnum,
+
+    createdAt: z.date(),
+
+    updatedAt: z.date(),
+});
+
+export type InventoryNested = z.infer<typeof inventoryNestedSchema>;
+
+export const inventorySchema = z.object({
+    id: z.bigint(),
+
+    warehouse: z.lazy(() => warehouseSchema),
+
+    name: z.string().min(1),
+
+    temperature: z.number().optional(),
+
+    type: inventoryTypeEnum,
+
+    inventoryItems: z.array(z.lazy(() => inventoryItemNestedSchema)).optional(),
 
     createdAt: z.date(),
 

@@ -392,8 +392,8 @@ export type AccountCreateInput = {
     scope?: string | null;
     idToken?: string | null;
     password?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     user: Prisma.UserCreateNestedOneWithoutAccountsInput;
 };
 
@@ -409,8 +409,8 @@ export type AccountUncheckedCreateInput = {
     scope?: string | null;
     idToken?: string | null;
     password?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type AccountUpdateInput = {
@@ -485,8 +485,8 @@ export type AccountCreateManyInput = {
     scope?: string | null;
     idToken?: string | null;
     password?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type AccountUpdateManyMutationInput = {
@@ -715,8 +715,8 @@ export type AccountCreateWithoutUserInput = {
     scope?: string | null;
     idToken?: string | null;
     password?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type AccountUncheckedCreateWithoutUserInput = {
@@ -730,8 +730,8 @@ export type AccountUncheckedCreateWithoutUserInput = {
     scope?: string | null;
     idToken?: string | null;
     password?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type AccountCreateOrConnectWithoutUserInput = {
@@ -815,8 +815,8 @@ export type AccountCreateManyUserInput = {
     scope?: string | null;
     idToken?: string | null;
     password?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type AccountUpdateWithoutUserInput = {

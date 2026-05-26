@@ -1,4 +1,6 @@
 import { z } from "zod";
+import { membershipNestedSchema } from "./membership";
+import { inventoryItemNestedSchema } from "./inventoryItem";
 
 export const warehouseSchema = z.object({
     id: z.bigint(),
@@ -6,6 +8,10 @@ export const warehouseSchema = z.object({
     name: z.string().min(1),
 
     address: z.string().optional(),
+
+    memberships: z.array(membershipNestedSchema).optional(),
+
+    inventories: z.array(z.lazy(() => inventoryItemNestedSchema)).optional(),
 
     createdAt: z.date(),
 

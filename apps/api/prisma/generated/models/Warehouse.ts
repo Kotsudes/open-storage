@@ -292,21 +292,21 @@ export type WarehouseScalarWhereWithAggregatesInput = {
 };
 
 export type WarehouseCreateInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
     address?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     memberships?: Prisma.MembershipCreateNestedManyWithoutWarehouseInput;
     inventories?: Prisma.InventoryCreateNestedManyWithoutWarehouseInput;
 };
 
 export type WarehouseUncheckedCreateInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
     address?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     memberships?: Prisma.MembershipUncheckedCreateNestedManyWithoutWarehouseInput;
     inventories?: Prisma.InventoryUncheckedCreateNestedManyWithoutWarehouseInput;
 };
@@ -332,11 +332,11 @@ export type WarehouseUncheckedUpdateInput = {
 };
 
 export type WarehouseCreateManyInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
     address?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type WarehouseUpdateManyMutationInput = {
@@ -453,20 +453,20 @@ export type WarehouseUpdateOneRequiredWithoutInventoriesNestedInput = {
 };
 
 export type WarehouseCreateWithoutMembershipsInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
     address?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     inventories?: Prisma.InventoryCreateNestedManyWithoutWarehouseInput;
 };
 
 export type WarehouseUncheckedCreateWithoutMembershipsInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
     address?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     inventories?: Prisma.InventoryUncheckedCreateNestedManyWithoutWarehouseInput;
 };
 
@@ -517,20 +517,20 @@ export type WarehouseUncheckedUpdateWithoutMembershipsInput = {
 };
 
 export type WarehouseCreateWithoutInventoriesInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
     address?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     memberships?: Prisma.MembershipCreateNestedManyWithoutWarehouseInput;
 };
 
 export type WarehouseUncheckedCreateWithoutInventoriesInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
     address?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     memberships?: Prisma.MembershipUncheckedCreateNestedManyWithoutWarehouseInput;
 };
 

@@ -31,6 +31,7 @@ import {
 
 import { Inventory, InventoryType } from "@open-storage/shared";
 import InventoryList from "./_components/inventory-list";
+import InventoryCreateSheet from "./_components/inventory-create-sheet";
 
 const inventories: Inventory[] = [
     {
@@ -140,9 +141,7 @@ export default function Page() {
                         warehouse.
                     </p>
                 </div>
-                <Button className="mt-4 ml-auto" size="lg">
-                    Create Inventory
-                </Button>
+                <InventoryCreateSheet />
             </header>
 
             <div className="@container/main flex flex-1 flex-col gap-2">

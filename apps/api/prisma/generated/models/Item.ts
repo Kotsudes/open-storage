@@ -286,20 +286,20 @@ export type ItemScalarWhereWithAggregatesInput = {
 };
 
 export type ItemCreateInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     unit: Prisma.UnitCreateNestedOneWithoutItemsInput;
     inventoryItems?: Prisma.InventoryItemCreateNestedManyWithoutItemInput;
 };
 
 export type ItemUncheckedCreateInput = {
-    id: bigint | number;
+    id?: bigint | number;
     unitId: number;
     name: string;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     inventoryItems?: Prisma.InventoryItemUncheckedCreateNestedManyWithoutItemInput;
 };
 
@@ -322,11 +322,11 @@ export type ItemUncheckedUpdateInput = {
 };
 
 export type ItemCreateManyInput = {
-    id: bigint | number;
+    id?: bigint | number;
     unitId: number;
     name: string;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type ItemUpdateManyMutationInput = {
@@ -506,18 +506,18 @@ export type ItemUpdateOneRequiredWithoutInventoryItemsNestedInput = {
 };
 
 export type ItemCreateWithoutUnitInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     inventoryItems?: Prisma.InventoryItemCreateNestedManyWithoutItemInput;
 };
 
 export type ItemUncheckedCreateWithoutUnitInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     inventoryItems?: Prisma.InventoryItemUncheckedCreateNestedManyWithoutItemInput;
 };
 
@@ -574,19 +574,19 @@ export type ItemScalarWhereInput = {
 };
 
 export type ItemCreateWithoutInventoryItemsInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     unit: Prisma.UnitCreateNestedOneWithoutItemsInput;
 };
 
 export type ItemUncheckedCreateWithoutInventoryItemsInput = {
-    id: bigint | number;
+    id?: bigint | number;
     unitId: number;
     name: string;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type ItemCreateOrConnectWithoutInventoryItemsInput = {
@@ -634,10 +634,10 @@ export type ItemUncheckedUpdateWithoutInventoryItemsInput = {
 };
 
 export type ItemCreateManyUnitInput = {
-    id: bigint | number;
+    id?: bigint | number;
     name: string;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type ItemUpdateWithoutUnitInput = {

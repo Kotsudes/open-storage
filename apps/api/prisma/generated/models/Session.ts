@@ -291,11 +291,11 @@ export type SessionScalarWhereWithAggregatesInput = {
 export type SessionCreateInput = {
     id: string;
     token: string;
-    expiresAt: Date | string;
+    expiresAt?: Date | string;
     ipAddress?: string | null;
     userAgent?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     user: Prisma.UserCreateNestedOneWithoutSessionsInput;
 };
 
@@ -303,11 +303,11 @@ export type SessionUncheckedCreateInput = {
     id: string;
     userId: string;
     token: string;
-    expiresAt: Date | string;
+    expiresAt?: Date | string;
     ipAddress?: string | null;
     userAgent?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type SessionUpdateInput = {
@@ -336,11 +336,11 @@ export type SessionCreateManyInput = {
     id: string;
     userId: string;
     token: string;
-    expiresAt: Date | string;
+    expiresAt?: Date | string;
     ipAddress?: string | null;
     userAgent?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type SessionUpdateManyMutationInput = {
@@ -504,21 +504,21 @@ export type SessionUncheckedUpdateManyWithoutUserNestedInput = {
 export type SessionCreateWithoutUserInput = {
     id: string;
     token: string;
-    expiresAt: Date | string;
+    expiresAt?: Date | string;
     ipAddress?: string | null;
     userAgent?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type SessionUncheckedCreateWithoutUserInput = {
     id: string;
     token: string;
-    expiresAt: Date | string;
+    expiresAt?: Date | string;
     ipAddress?: string | null;
     userAgent?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type SessionCreateOrConnectWithoutUserInput = {
@@ -581,11 +581,11 @@ export type SessionScalarWhereInput = {
 export type SessionCreateManyUserInput = {
     id: string;
     token: string;
-    expiresAt: Date | string;
+    expiresAt?: Date | string;
     ipAddress?: string | null;
     userAgent?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type SessionUpdateWithoutUserInput = {

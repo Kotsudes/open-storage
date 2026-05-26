@@ -291,27 +291,25 @@ export type UnitScalarWhereWithAggregatesInput = {
 };
 
 export type UnitCreateInput = {
-    id: number;
     name: string;
     description?: string | null;
     symbol?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     items?: Prisma.ItemCreateNestedManyWithoutUnitInput;
 };
 
 export type UnitUncheckedCreateInput = {
-    id: number;
+    id?: number;
     name: string;
     description?: string | null;
     symbol?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     items?: Prisma.ItemUncheckedCreateNestedManyWithoutUnitInput;
 };
 
 export type UnitUpdateInput = {
-    id?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     description?:
         | Prisma.NullableStringFieldUpdateOperationsInput
@@ -337,16 +335,15 @@ export type UnitUncheckedUpdateInput = {
 };
 
 export type UnitCreateManyInput = {
-    id: number;
+    id?: number;
     name: string;
     description?: string | null;
     symbol?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type UnitUpdateManyMutationInput = {
-    id?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     description?:
         | Prisma.NullableStringFieldUpdateOperationsInput
@@ -444,21 +441,20 @@ export type UnitUpdateOneRequiredWithoutItemsNestedInput = {
 };
 
 export type UnitCreateWithoutItemsInput = {
-    id: number;
     name: string;
     description?: string | null;
     symbol?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type UnitUncheckedCreateWithoutItemsInput = {
-    id: number;
+    id?: number;
     name: string;
     description?: string | null;
     symbol?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type UnitCreateOrConnectWithoutItemsInput = {
@@ -490,7 +486,6 @@ export type UnitUpdateToOneWithWhereWithoutItemsInput = {
 };
 
 export type UnitUpdateWithoutItemsInput = {
-    id?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     description?:
         | Prisma.NullableStringFieldUpdateOperationsInput

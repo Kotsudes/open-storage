@@ -275,8 +275,8 @@ export type UserCreateInput = {
     email: string;
     emailVerified: boolean;
     image?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     sessions?: Prisma.SessionCreateNestedManyWithoutUserInput;
     accounts?: Prisma.AccountCreateNestedManyWithoutUserInput;
     memberships?: Prisma.MembershipCreateNestedManyWithoutUserInput;
@@ -288,8 +288,8 @@ export type UserUncheckedCreateInput = {
     email: string;
     emailVerified: boolean;
     image?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
     accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput;
     memberships?: Prisma.MembershipUncheckedCreateNestedManyWithoutUserInput;
@@ -327,8 +327,8 @@ export type UserCreateManyInput = {
     email: string;
     emailVerified: boolean;
     image?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type UserUpdateManyMutationInput = {
@@ -486,8 +486,8 @@ export type UserCreateWithoutSessionsInput = {
     email: string;
     emailVerified: boolean;
     image?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     accounts?: Prisma.AccountCreateNestedManyWithoutUserInput;
     memberships?: Prisma.MembershipCreateNestedManyWithoutUserInput;
 };
@@ -498,8 +498,8 @@ export type UserUncheckedCreateWithoutSessionsInput = {
     email: string;
     emailVerified: boolean;
     image?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput;
     memberships?: Prisma.MembershipUncheckedCreateNestedManyWithoutUserInput;
 };
@@ -562,8 +562,8 @@ export type UserCreateWithoutAccountsInput = {
     email: string;
     emailVerified: boolean;
     image?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     sessions?: Prisma.SessionCreateNestedManyWithoutUserInput;
     memberships?: Prisma.MembershipCreateNestedManyWithoutUserInput;
 };
@@ -574,8 +574,8 @@ export type UserUncheckedCreateWithoutAccountsInput = {
     email: string;
     emailVerified: boolean;
     image?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
     memberships?: Prisma.MembershipUncheckedCreateNestedManyWithoutUserInput;
 };
@@ -638,8 +638,8 @@ export type UserCreateWithoutMembershipsInput = {
     email: string;
     emailVerified: boolean;
     image?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     sessions?: Prisma.SessionCreateNestedManyWithoutUserInput;
     accounts?: Prisma.AccountCreateNestedManyWithoutUserInput;
 };
@@ -650,8 +650,8 @@ export type UserUncheckedCreateWithoutMembershipsInput = {
     email: string;
     emailVerified: boolean;
     image?: string | null;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput;
     accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput;
 };

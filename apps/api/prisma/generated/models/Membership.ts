@@ -320,21 +320,21 @@ export type MembershipScalarWhereWithAggregatesInput = {
 };
 
 export type MembershipCreateInput = {
-    id: bigint | number;
+    id?: bigint | number;
     role: $Enums.Role;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     user: Prisma.UserCreateNestedOneWithoutMembershipsInput;
     warehouse: Prisma.WarehouseCreateNestedOneWithoutMembershipsInput;
 };
 
 export type MembershipUncheckedCreateInput = {
-    id: bigint | number;
+    id?: bigint | number;
     userId: string;
     warehouseId: bigint | number;
     role: $Enums.Role;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type MembershipUpdateInput = {
@@ -356,12 +356,12 @@ export type MembershipUncheckedUpdateInput = {
 };
 
 export type MembershipCreateManyInput = {
-    id: bigint | number;
+    id?: bigint | number;
     userId: string;
     warehouseId: bigint | number;
     role: $Enums.Role;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type MembershipUpdateManyMutationInput = {
@@ -652,19 +652,19 @@ export type EnumRoleFieldUpdateOperationsInput = {
 };
 
 export type MembershipCreateWithoutUserInput = {
-    id: bigint | number;
+    id?: bigint | number;
     role: $Enums.Role;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     warehouse: Prisma.WarehouseCreateNestedOneWithoutMembershipsInput;
 };
 
 export type MembershipUncheckedCreateWithoutUserInput = {
-    id: bigint | number;
+    id?: bigint | number;
     warehouseId: bigint | number;
     role: $Enums.Role;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type MembershipCreateOrConnectWithoutUserInput = {
@@ -727,19 +727,19 @@ export type MembershipScalarWhereInput = {
 };
 
 export type MembershipCreateWithoutWarehouseInput = {
-    id: bigint | number;
+    id?: bigint | number;
     role: $Enums.Role;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
     user: Prisma.UserCreateNestedOneWithoutMembershipsInput;
 };
 
 export type MembershipUncheckedCreateWithoutWarehouseInput = {
-    id: bigint | number;
+    id?: bigint | number;
     userId: string;
     role: $Enums.Role;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type MembershipCreateOrConnectWithoutWarehouseInput = {
@@ -786,11 +786,11 @@ export type MembershipUpdateManyWithWhereWithoutWarehouseInput = {
 };
 
 export type MembershipCreateManyUserInput = {
-    id: bigint | number;
+    id?: bigint | number;
     warehouseId: bigint | number;
     role: $Enums.Role;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type MembershipUpdateWithoutUserInput = {
@@ -818,11 +818,11 @@ export type MembershipUncheckedUpdateManyWithoutUserInput = {
 };
 
 export type MembershipCreateManyWarehouseInput = {
-    id: bigint | number;
+    id?: bigint | number;
     userId: string;
     role: $Enums.Role;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type MembershipUpdateWithoutWarehouseInput = {

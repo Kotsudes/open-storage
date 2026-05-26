@@ -273,18 +273,18 @@ export type VerificationCreateInput = {
     id: string;
     identifier: string;
     value: string;
-    expiresAt: Date | string;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    expiresAt?: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type VerificationUncheckedCreateInput = {
     id: string;
     identifier: string;
     value: string;
-    expiresAt: Date | string;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    expiresAt?: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type VerificationUpdateInput = {
@@ -309,9 +309,9 @@ export type VerificationCreateManyInput = {
     id: string;
     identifier: string;
     value: string;
-    expiresAt: Date | string;
-    createdAt: Date | string;
-    updatedAt: Date | string;
+    expiresAt?: Date | string;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
 };
 
 export type VerificationUpdateManyMutationInput = {

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { itemNestedSchema } from "./item";
 
 export const unitSchema = z.object({
     id: z.int(),
@@ -8,6 +9,8 @@ export const unitSchema = z.object({
     description: z.string().optional(),
 
     symbol: z.string().optional(),
+
+    items: z.array(z.lazy(() => itemNestedSchema)).optional(),
 
     createdAt: z.date(),
 

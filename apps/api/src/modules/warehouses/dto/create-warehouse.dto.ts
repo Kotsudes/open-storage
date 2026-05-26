@@ -1,0 +1,11 @@
+import { IsNotEmpty, IsOptional, IsString } from "class-validator";
+
+export class CreateWarehouseDto {
+    @IsString()
+    @IsNotEmpty()
+    readonly name!: string;
+
+    @IsString()
+    @IsOptional()
+    readonly address?: string;
+}

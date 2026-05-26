@@ -6,7 +6,6 @@ import {
     ChevronsUpDown,
     Command,
     GalleryVerticalEnd,
-    Plus,
 } from "lucide-react";
 
 import {
@@ -25,6 +24,7 @@ import {
     SidebarMenuItem,
     useSidebar,
 } from "@/components/ui/sidebar";
+import WarehouseCreateSheet from "./warehouse-create-sheet";
 
 export function WarehouseSwitcher() {
     const { isMobile } = useSidebar();
@@ -87,7 +87,7 @@ export function WarehouseSwitcher() {
                     >
                         <DropdownMenuGroup>
                             <DropdownMenuLabel className="text-muted-foreground text-xs">
-                                Teams
+                                Warehouses
                             </DropdownMenuLabel>
                             {warehouse.map((team, index) => (
                                 <DropdownMenuItem
@@ -106,14 +106,8 @@ export function WarehouseSwitcher() {
                             ))}
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem className="gap-2 p-2">
-                            <div className="flex size-6 items-center justify-center rounded-md border bg-transparent">
-                                <Plus className="size-4" />
-                            </div>
-                            <div className="text-muted-foreground font-medium">
-                                Add team
-                            </div>
-                        </DropdownMenuItem>
+
+                        <WarehouseCreateSheet />
                     </DropdownMenuContent>
                 </DropdownMenu>
             </SidebarMenuItem>
