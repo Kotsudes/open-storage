@@ -1454,19 +1454,19 @@ export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<
 >;
 
 /**
- * Reference to a field of type 'BigInt'
+ * Reference to a field of type 'Int'
  */
-export type BigIntFieldRefInput<$PrismaModel> = FieldRefInputType<
+export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<
     $PrismaModel,
-    "BigInt"
+    "Int"
 >;
 
 /**
- * Reference to a field of type 'BigInt[]'
+ * Reference to a field of type 'Int[]'
  */
-export type ListBigIntFieldRefInput<$PrismaModel> = FieldRefInputType<
+export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<
     $PrismaModel,
-    "BigInt[]"
+    "Int[]"
 >;
 
 /**
@@ -1514,22 +1514,6 @@ export type EnumInventoryTypeFieldRefInput<$PrismaModel> = FieldRefInputType<
  */
 export type ListEnumInventoryTypeFieldRefInput<$PrismaModel> =
     FieldRefInputType<$PrismaModel, "InventoryType[]">;
-
-/**
- * Reference to a field of type 'Int'
- */
-export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<
-    $PrismaModel,
-    "Int"
->;
-
-/**
- * Reference to a field of type 'Int[]'
- */
-export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<
-    $PrismaModel,
-    "Int[]"
->;
 
 /**
  * Batch Payload for updateMany & deleteMany & createMany

@@ -14,7 +14,7 @@ export const inventoryTypeEnum = z.enum([
 export type InventoryType = z.infer<typeof inventoryTypeEnum>;
 
 export const inventoryNestedSchema = z.object({
-    id: z.bigint(),
+    id: z.number(),
 
     name: z.string().min(1),
 
@@ -30,7 +30,7 @@ export const inventoryNestedSchema = z.object({
 export type InventoryNested = z.infer<typeof inventoryNestedSchema>;
 
 export const inventorySchema = z.object({
-    id: z.bigint(),
+    id: z.number(),
 
     warehouse: z.lazy(() => warehouseSchema),
 

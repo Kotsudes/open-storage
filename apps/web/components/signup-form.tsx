@@ -19,8 +19,10 @@ import { toast } from "sonner";
 import { authClient } from "@/lib/auth-client";
 import { useForm } from "@tanstack/react-form-nextjs";
 import * as z from "zod";
+import { useRouter } from "next/navigation";
 
 export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
+    const router = useRouter();
     const formSchema = z
         .object({
             name: z.string().min(1, "Name is required"),
@@ -67,6 +69,7 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
             }
 
             toast.success("Account created successfully!");
+            router.push("/");
         },
     });
 

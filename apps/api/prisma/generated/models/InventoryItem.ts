@@ -34,16 +34,16 @@ export type InventoryItemAvgAggregateOutputType = {
 };
 
 export type InventoryItemSumAggregateOutputType = {
-    id: bigint | null;
-    inventoryId: bigint | null;
-    itemId: bigint | null;
+    id: number | null;
+    inventoryId: number | null;
+    itemId: number | null;
     quantity: number | null;
 };
 
 export type InventoryItemMinAggregateOutputType = {
-    id: bigint | null;
-    inventoryId: bigint | null;
-    itemId: bigint | null;
+    id: number | null;
+    inventoryId: number | null;
+    itemId: number | null;
     quantity: number | null;
     expiryDate: Date | null;
     createdAt: Date | null;
@@ -51,9 +51,9 @@ export type InventoryItemMinAggregateOutputType = {
 };
 
 export type InventoryItemMaxAggregateOutputType = {
-    id: bigint | null;
-    inventoryId: bigint | null;
-    itemId: bigint | null;
+    id: number | null;
+    inventoryId: number | null;
+    itemId: number | null;
     quantity: number | null;
     expiryDate: Date | null;
     createdAt: Date | null;
@@ -214,9 +214,9 @@ export type InventoryItemGroupByArgs<
 };
 
 export type InventoryItemGroupByOutputType = {
-    id: bigint;
-    inventoryId: bigint;
-    itemId: bigint;
+    id: number;
+    inventoryId: number;
+    itemId: number;
     quantity: number;
     expiryDate: Date | null;
     createdAt: Date;
@@ -252,9 +252,9 @@ export type InventoryItemWhereInput = {
     AND?: Prisma.InventoryItemWhereInput | Prisma.InventoryItemWhereInput[];
     OR?: Prisma.InventoryItemWhereInput[];
     NOT?: Prisma.InventoryItemWhereInput | Prisma.InventoryItemWhereInput[];
-    id?: Prisma.BigIntFilter<"InventoryItem"> | bigint | number;
-    inventoryId?: Prisma.BigIntFilter<"InventoryItem"> | bigint | number;
-    itemId?: Prisma.BigIntFilter<"InventoryItem"> | bigint | number;
+    id?: Prisma.IntFilter<"InventoryItem"> | number;
+    inventoryId?: Prisma.IntFilter<"InventoryItem"> | number;
+    itemId?: Prisma.IntFilter<"InventoryItem"> | number;
     quantity?: Prisma.FloatFilter<"InventoryItem"> | number;
     expiryDate?:
         | Prisma.DateTimeNullableFilter<"InventoryItem">
@@ -284,12 +284,12 @@ export type InventoryItemOrderByWithRelationInput = {
 
 export type InventoryItemWhereUniqueInput = Prisma.AtLeast<
     {
-        id?: bigint | number;
+        id?: number;
         AND?: Prisma.InventoryItemWhereInput | Prisma.InventoryItemWhereInput[];
         OR?: Prisma.InventoryItemWhereInput[];
         NOT?: Prisma.InventoryItemWhereInput | Prisma.InventoryItemWhereInput[];
-        inventoryId?: Prisma.BigIntFilter<"InventoryItem"> | bigint | number;
-        itemId?: Prisma.BigIntFilter<"InventoryItem"> | bigint | number;
+        inventoryId?: Prisma.IntFilter<"InventoryItem"> | number;
+        itemId?: Prisma.IntFilter<"InventoryItem"> | number;
         quantity?: Prisma.FloatFilter<"InventoryItem"> | number;
         expiryDate?:
             | Prisma.DateTimeNullableFilter<"InventoryItem">
@@ -333,15 +333,9 @@ export type InventoryItemScalarWhereWithAggregatesInput = {
     NOT?:
         | Prisma.InventoryItemScalarWhereWithAggregatesInput
         | Prisma.InventoryItemScalarWhereWithAggregatesInput[];
-    id?: Prisma.BigIntWithAggregatesFilter<"InventoryItem"> | bigint | number;
-    inventoryId?:
-        | Prisma.BigIntWithAggregatesFilter<"InventoryItem">
-        | bigint
-        | number;
-    itemId?:
-        | Prisma.BigIntWithAggregatesFilter<"InventoryItem">
-        | bigint
-        | number;
+    id?: Prisma.IntWithAggregatesFilter<"InventoryItem"> | number;
+    inventoryId?: Prisma.IntWithAggregatesFilter<"InventoryItem"> | number;
+    itemId?: Prisma.IntWithAggregatesFilter<"InventoryItem"> | number;
     quantity?: Prisma.FloatWithAggregatesFilter<"InventoryItem"> | number;
     expiryDate?:
         | Prisma.DateTimeNullableWithAggregatesFilter<"InventoryItem">
@@ -359,7 +353,6 @@ export type InventoryItemScalarWhereWithAggregatesInput = {
 };
 
 export type InventoryItemCreateInput = {
-    id?: bigint | number;
     quantity: number;
     expiryDate?: Date | string | null;
     createdAt?: Date | string;
@@ -369,9 +362,9 @@ export type InventoryItemCreateInput = {
 };
 
 export type InventoryItemUncheckedCreateInput = {
-    id?: bigint | number;
-    inventoryId: bigint | number;
-    itemId: bigint | number;
+    id?: number;
+    inventoryId: number;
+    itemId: number;
     quantity: number;
     expiryDate?: Date | string | null;
     createdAt?: Date | string;
@@ -379,7 +372,6 @@ export type InventoryItemUncheckedCreateInput = {
 };
 
 export type InventoryItemUpdateInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     expiryDate?:
         | Prisma.NullableDateTimeFieldUpdateOperationsInput
@@ -393,9 +385,9 @@ export type InventoryItemUpdateInput = {
 };
 
 export type InventoryItemUncheckedUpdateInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
-    inventoryId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
-    itemId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    inventoryId?: Prisma.IntFieldUpdateOperationsInput | number;
+    itemId?: Prisma.IntFieldUpdateOperationsInput | number;
     quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     expiryDate?:
         | Prisma.NullableDateTimeFieldUpdateOperationsInput
@@ -407,9 +399,9 @@ export type InventoryItemUncheckedUpdateInput = {
 };
 
 export type InventoryItemCreateManyInput = {
-    id?: bigint | number;
-    inventoryId: bigint | number;
-    itemId: bigint | number;
+    id?: number;
+    inventoryId: number;
+    itemId: number;
     quantity: number;
     expiryDate?: Date | string | null;
     createdAt?: Date | string;
@@ -417,7 +409,6 @@ export type InventoryItemCreateManyInput = {
 };
 
 export type InventoryItemUpdateManyMutationInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     expiryDate?:
         | Prisma.NullableDateTimeFieldUpdateOperationsInput
@@ -429,9 +420,9 @@ export type InventoryItemUpdateManyMutationInput = {
 };
 
 export type InventoryItemUncheckedUpdateManyInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
-    inventoryId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
-    itemId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    inventoryId?: Prisma.IntFieldUpdateOperationsInput | number;
+    itemId?: Prisma.IntFieldUpdateOperationsInput | number;
     quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     expiryDate?:
         | Prisma.NullableDateTimeFieldUpdateOperationsInput
@@ -725,7 +716,6 @@ export type FloatFieldUpdateOperationsInput = {
 };
 
 export type InventoryItemCreateWithoutInventoryInput = {
-    id?: bigint | number;
     quantity: number;
     expiryDate?: Date | string | null;
     createdAt?: Date | string;
@@ -734,8 +724,8 @@ export type InventoryItemCreateWithoutInventoryInput = {
 };
 
 export type InventoryItemUncheckedCreateWithoutInventoryInput = {
-    id?: bigint | number;
-    itemId: bigint | number;
+    id?: number;
+    itemId: number;
     quantity: number;
     expiryDate?: Date | string | null;
     createdAt?: Date | string;
@@ -793,9 +783,9 @@ export type InventoryItemScalarWhereInput = {
     NOT?:
         | Prisma.InventoryItemScalarWhereInput
         | Prisma.InventoryItemScalarWhereInput[];
-    id?: Prisma.BigIntFilter<"InventoryItem"> | bigint | number;
-    inventoryId?: Prisma.BigIntFilter<"InventoryItem"> | bigint | number;
-    itemId?: Prisma.BigIntFilter<"InventoryItem"> | bigint | number;
+    id?: Prisma.IntFilter<"InventoryItem"> | number;
+    inventoryId?: Prisma.IntFilter<"InventoryItem"> | number;
+    itemId?: Prisma.IntFilter<"InventoryItem"> | number;
     quantity?: Prisma.FloatFilter<"InventoryItem"> | number;
     expiryDate?:
         | Prisma.DateTimeNullableFilter<"InventoryItem">
@@ -807,7 +797,6 @@ export type InventoryItemScalarWhereInput = {
 };
 
 export type InventoryItemCreateWithoutItemInput = {
-    id?: bigint | number;
     quantity: number;
     expiryDate?: Date | string | null;
     createdAt?: Date | string;
@@ -816,8 +805,8 @@ export type InventoryItemCreateWithoutItemInput = {
 };
 
 export type InventoryItemUncheckedCreateWithoutItemInput = {
-    id?: bigint | number;
-    inventoryId: bigint | number;
+    id?: number;
+    inventoryId: number;
     quantity: number;
     expiryDate?: Date | string | null;
     createdAt?: Date | string;
@@ -868,8 +857,8 @@ export type InventoryItemUpdateManyWithWhereWithoutItemInput = {
 };
 
 export type InventoryItemCreateManyInventoryInput = {
-    id?: bigint | number;
-    itemId: bigint | number;
+    id?: number;
+    itemId: number;
     quantity: number;
     expiryDate?: Date | string | null;
     createdAt?: Date | string;
@@ -877,7 +866,6 @@ export type InventoryItemCreateManyInventoryInput = {
 };
 
 export type InventoryItemUpdateWithoutInventoryInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     expiryDate?:
         | Prisma.NullableDateTimeFieldUpdateOperationsInput
@@ -890,8 +878,8 @@ export type InventoryItemUpdateWithoutInventoryInput = {
 };
 
 export type InventoryItemUncheckedUpdateWithoutInventoryInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
-    itemId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    itemId?: Prisma.IntFieldUpdateOperationsInput | number;
     quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     expiryDate?:
         | Prisma.NullableDateTimeFieldUpdateOperationsInput
@@ -903,8 +891,8 @@ export type InventoryItemUncheckedUpdateWithoutInventoryInput = {
 };
 
 export type InventoryItemUncheckedUpdateManyWithoutInventoryInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
-    itemId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    itemId?: Prisma.IntFieldUpdateOperationsInput | number;
     quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     expiryDate?:
         | Prisma.NullableDateTimeFieldUpdateOperationsInput
@@ -916,8 +904,8 @@ export type InventoryItemUncheckedUpdateManyWithoutInventoryInput = {
 };
 
 export type InventoryItemCreateManyItemInput = {
-    id?: bigint | number;
-    inventoryId: bigint | number;
+    id?: number;
+    inventoryId: number;
     quantity: number;
     expiryDate?: Date | string | null;
     createdAt?: Date | string;
@@ -925,7 +913,6 @@ export type InventoryItemCreateManyItemInput = {
 };
 
 export type InventoryItemUpdateWithoutItemInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     expiryDate?:
         | Prisma.NullableDateTimeFieldUpdateOperationsInput
@@ -938,8 +925,8 @@ export type InventoryItemUpdateWithoutItemInput = {
 };
 
 export type InventoryItemUncheckedUpdateWithoutItemInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
-    inventoryId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    inventoryId?: Prisma.IntFieldUpdateOperationsInput | number;
     quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     expiryDate?:
         | Prisma.NullableDateTimeFieldUpdateOperationsInput
@@ -951,8 +938,8 @@ export type InventoryItemUncheckedUpdateWithoutItemInput = {
 };
 
 export type InventoryItemUncheckedUpdateManyWithoutItemInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
-    inventoryId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    inventoryId?: Prisma.IntFieldUpdateOperationsInput | number;
     quantity?: Prisma.FloatFieldUpdateOperationsInput | number;
     expiryDate?:
         | Prisma.NullableDateTimeFieldUpdateOperationsInput
@@ -1073,9 +1060,9 @@ export type $InventoryItemPayload<
     };
     scalars: runtime.Types.Extensions.GetPayloadResult<
         {
-            id: bigint;
-            inventoryId: bigint;
-            itemId: bigint;
+            id: number;
+            inventoryId: number;
+            itemId: number;
             quantity: number;
             expiryDate: Date | null;
             createdAt: Date;
@@ -1722,9 +1709,9 @@ export interface Prisma__InventoryItemClient<
  * Fields of the InventoryItem model
  */
 export interface InventoryItemFieldRefs {
-    readonly id: Prisma.FieldRef<"InventoryItem", "BigInt">;
-    readonly inventoryId: Prisma.FieldRef<"InventoryItem", "BigInt">;
-    readonly itemId: Prisma.FieldRef<"InventoryItem", "BigInt">;
+    readonly id: Prisma.FieldRef<"InventoryItem", "Int">;
+    readonly inventoryId: Prisma.FieldRef<"InventoryItem", "Int">;
+    readonly itemId: Prisma.FieldRef<"InventoryItem", "Int">;
     readonly quantity: Prisma.FieldRef<"InventoryItem", "Float">;
     readonly expiryDate: Prisma.FieldRef<"InventoryItem", "DateTime">;
     readonly createdAt: Prisma.FieldRef<"InventoryItem", "DateTime">;

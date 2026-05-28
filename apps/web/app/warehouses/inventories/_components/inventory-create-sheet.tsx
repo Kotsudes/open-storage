@@ -20,7 +20,7 @@ import * as z from "zod";
 
 export default function InventoryCreateSheet() {
     const formSchema = z.object({
-        warehouseId: z.bigint("Warehouse is required"),
+        warehouseId: z.number("Warehouse is required"),
         name: z.string().min(1, "Name is required"),
         temperature: z.number().optional(),
         type: inventoryTypeEnum,
@@ -29,7 +29,7 @@ export default function InventoryCreateSheet() {
     type CreateInventoryFormData = z.infer<typeof formSchema>;
 
     const defaultValues: CreateInventoryFormData = {
-        warehouseId: BigInt(0),
+        warehouseId: 0,
         name: "Inventory Name",
         temperature: undefined,
         type: "OTHER",
@@ -41,7 +41,7 @@ export default function InventoryCreateSheet() {
             onSubmit: formSchema,
         },
         onSubmit: async (values) => {
-            console.log("Form submitted with values:", values.value);
+            console.log("Form submitted with values:", values);
         },
     });
 
@@ -54,13 +54,14 @@ export default function InventoryCreateSheet() {
                     </Button>
                 }
             />
-            <form
-                onSubmit={(e) => {
-                    e.preventDefault();
-                    form.handleSubmit();
-                }}
-            >
-                <SheetContent>
+
+            <SheetContent>
+                <form
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        form.handleSubmit();
+                    }}
+                >
                     <SheetHeader>
                         <SheetTitle>Enter the new inventory details</SheetTitle>
                         <SheetDescription>
@@ -175,8 +176,8 @@ export default function InventoryCreateSheet() {
                     <SheetFooter>
                         <Button type="submit">Create Inventory</Button>
                     </SheetFooter>
-                </SheetContent>
-            </form>
+                </form>
+            </SheetContent>
         </Sheet>
     );
 }

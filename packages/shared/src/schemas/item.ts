@@ -3,7 +3,7 @@ import { unitSchema } from "./unit";
 import { inventoryItemNestedSchema } from "./inventoryItem";
 
 export const itemNestedSchema = z.object({
-    id: z.bigint(),
+    id: z.number(),
 
     name: z.string().min(1),
 
@@ -14,7 +14,7 @@ export const itemNestedSchema = z.object({
 export type ItemNested = z.infer<typeof itemNestedSchema>;
 
 export const itemSchema = z.object({
-    id: z.bigint(),
+    id: z.number(),
 
     unit: z.lazy(() => unitSchema),
 

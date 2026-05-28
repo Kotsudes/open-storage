@@ -32,12 +32,12 @@ export type ItemAvgAggregateOutputType = {
 };
 
 export type ItemSumAggregateOutputType = {
-    id: bigint | null;
+    id: number | null;
     unitId: number | null;
 };
 
 export type ItemMinAggregateOutputType = {
-    id: bigint | null;
+    id: number | null;
     unitId: number | null;
     name: string | null;
     createdAt: Date | null;
@@ -45,7 +45,7 @@ export type ItemMinAggregateOutputType = {
 };
 
 export type ItemMaxAggregateOutputType = {
-    id: bigint | null;
+    id: number | null;
     unitId: number | null;
     name: string | null;
     createdAt: Date | null;
@@ -190,7 +190,7 @@ export type ItemGroupByArgs<
 };
 
 export type ItemGroupByOutputType = {
-    id: bigint;
+    id: number;
     unitId: number;
     name: string;
     createdAt: Date;
@@ -219,7 +219,7 @@ export type ItemWhereInput = {
     AND?: Prisma.ItemWhereInput | Prisma.ItemWhereInput[];
     OR?: Prisma.ItemWhereInput[];
     NOT?: Prisma.ItemWhereInput | Prisma.ItemWhereInput[];
-    id?: Prisma.BigIntFilter<"Item"> | bigint | number;
+    id?: Prisma.IntFilter<"Item"> | number;
     unitId?: Prisma.IntFilter<"Item"> | number;
     name?: Prisma.StringFilter<"Item"> | string;
     createdAt?: Prisma.DateTimeFilter<"Item"> | Date | string;
@@ -240,7 +240,7 @@ export type ItemOrderByWithRelationInput = {
 
 export type ItemWhereUniqueInput = Prisma.AtLeast<
     {
-        id?: bigint | number;
+        id?: number;
         AND?: Prisma.ItemWhereInput | Prisma.ItemWhereInput[];
         OR?: Prisma.ItemWhereInput[];
         NOT?: Prisma.ItemWhereInput | Prisma.ItemWhereInput[];
@@ -278,7 +278,7 @@ export type ItemScalarWhereWithAggregatesInput = {
     NOT?:
         | Prisma.ItemScalarWhereWithAggregatesInput
         | Prisma.ItemScalarWhereWithAggregatesInput[];
-    id?: Prisma.BigIntWithAggregatesFilter<"Item"> | bigint | number;
+    id?: Prisma.IntWithAggregatesFilter<"Item"> | number;
     unitId?: Prisma.IntWithAggregatesFilter<"Item"> | number;
     name?: Prisma.StringWithAggregatesFilter<"Item"> | string;
     createdAt?: Prisma.DateTimeWithAggregatesFilter<"Item"> | Date | string;
@@ -286,7 +286,6 @@ export type ItemScalarWhereWithAggregatesInput = {
 };
 
 export type ItemCreateInput = {
-    id?: bigint | number;
     name: string;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -295,7 +294,7 @@ export type ItemCreateInput = {
 };
 
 export type ItemUncheckedCreateInput = {
-    id?: bigint | number;
+    id?: number;
     unitId: number;
     name: string;
     createdAt?: Date | string;
@@ -304,7 +303,6 @@ export type ItemUncheckedCreateInput = {
 };
 
 export type ItemUpdateInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -313,7 +311,7 @@ export type ItemUpdateInput = {
 };
 
 export type ItemUncheckedUpdateInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
     unitId?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -322,7 +320,7 @@ export type ItemUncheckedUpdateInput = {
 };
 
 export type ItemCreateManyInput = {
-    id?: bigint | number;
+    id?: number;
     unitId: number;
     name: string;
     createdAt?: Date | string;
@@ -330,14 +328,13 @@ export type ItemCreateManyInput = {
 };
 
 export type ItemUpdateManyMutationInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 
 export type ItemUncheckedUpdateManyInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
     unitId?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -506,7 +503,6 @@ export type ItemUpdateOneRequiredWithoutInventoryItemsNestedInput = {
 };
 
 export type ItemCreateWithoutUnitInput = {
-    id?: bigint | number;
     name: string;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -514,7 +510,7 @@ export type ItemCreateWithoutUnitInput = {
 };
 
 export type ItemUncheckedCreateWithoutUnitInput = {
-    id?: bigint | number;
+    id?: number;
     name: string;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -566,7 +562,7 @@ export type ItemScalarWhereInput = {
     AND?: Prisma.ItemScalarWhereInput | Prisma.ItemScalarWhereInput[];
     OR?: Prisma.ItemScalarWhereInput[];
     NOT?: Prisma.ItemScalarWhereInput | Prisma.ItemScalarWhereInput[];
-    id?: Prisma.BigIntFilter<"Item"> | bigint | number;
+    id?: Prisma.IntFilter<"Item"> | number;
     unitId?: Prisma.IntFilter<"Item"> | number;
     name?: Prisma.StringFilter<"Item"> | string;
     createdAt?: Prisma.DateTimeFilter<"Item"> | Date | string;
@@ -574,7 +570,6 @@ export type ItemScalarWhereInput = {
 };
 
 export type ItemCreateWithoutInventoryItemsInput = {
-    id?: bigint | number;
     name: string;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -582,7 +577,7 @@ export type ItemCreateWithoutInventoryItemsInput = {
 };
 
 export type ItemUncheckedCreateWithoutInventoryItemsInput = {
-    id?: bigint | number;
+    id?: number;
     unitId: number;
     name: string;
     createdAt?: Date | string;
@@ -618,7 +613,6 @@ export type ItemUpdateToOneWithWhereWithoutInventoryItemsInput = {
 };
 
 export type ItemUpdateWithoutInventoryItemsInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -626,7 +620,7 @@ export type ItemUpdateWithoutInventoryItemsInput = {
 };
 
 export type ItemUncheckedUpdateWithoutInventoryItemsInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
     unitId?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -634,14 +628,13 @@ export type ItemUncheckedUpdateWithoutInventoryItemsInput = {
 };
 
 export type ItemCreateManyUnitInput = {
-    id?: bigint | number;
+    id?: number;
     name: string;
     createdAt?: Date | string;
     updatedAt?: Date | string;
 };
 
 export type ItemUpdateWithoutUnitInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -649,7 +642,7 @@ export type ItemUpdateWithoutUnitInput = {
 };
 
 export type ItemUncheckedUpdateWithoutUnitInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -657,7 +650,7 @@ export type ItemUncheckedUpdateWithoutUnitInput = {
 };
 
 export type ItemUncheckedUpdateManyWithoutUnitInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -795,7 +788,7 @@ export type $ItemPayload<
     };
     scalars: runtime.Types.Extensions.GetPayloadResult<
         {
-            id: bigint;
+            id: number;
             unitId: number;
             name: string;
             createdAt: Date;
@@ -1420,7 +1413,7 @@ export interface Prisma__ItemClient<
  * Fields of the Item model
  */
 export interface ItemFieldRefs {
-    readonly id: Prisma.FieldRef<"Item", "BigInt">;
+    readonly id: Prisma.FieldRef<"Item", "Int">;
     readonly unitId: Prisma.FieldRef<"Item", "Int">;
     readonly name: Prisma.FieldRef<"Item", "String">;
     readonly createdAt: Prisma.FieldRef<"Item", "DateTime">;

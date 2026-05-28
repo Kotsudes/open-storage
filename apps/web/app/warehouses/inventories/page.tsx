@@ -35,13 +35,13 @@ import InventoryCreateSheet from "./_components/inventory-create-sheet";
 
 const inventories: Inventory[] = [
     {
-        id: BigInt(1),
+        id: 1,
         name: "Refrigirateur cuisine",
         type: "FRIDGE",
         createdAt: new Date("2024-01-01T00:00:00Z"),
         updatedAt: new Date("2024-01-01T00:00:00Z"),
         warehouse: {
-            id: BigInt(1),
+            id: 1,
             name: "Main Warehouse",
             address: "123 Main St, Anytown, USA",
             createdAt: new Date("2024-01-01T00:00:00Z"),
@@ -49,13 +49,13 @@ const inventories: Inventory[] = [
         },
     },
     {
-        id: BigInt(2),
+        id: 2,
         name: "Cave à vin",
         type: "CELLAR",
         createdAt: new Date("2024-01-01T00:00:00Z"),
         updatedAt: new Date("2024-01-01T00:00:00Z"),
         warehouse: {
-            id: BigInt(1),
+            id: 1,
             name: "Main Warehouse",
             address: "123 Main St, Anytown, USA",
             createdAt: new Date("2024-01-01T00:00:00Z"),

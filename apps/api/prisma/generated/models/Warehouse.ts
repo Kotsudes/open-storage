@@ -31,11 +31,11 @@ export type WarehouseAvgAggregateOutputType = {
 };
 
 export type WarehouseSumAggregateOutputType = {
-    id: bigint | null;
+    id: number | null;
 };
 
 export type WarehouseMinAggregateOutputType = {
-    id: bigint | null;
+    id: number | null;
     name: string | null;
     address: string | null;
     createdAt: Date | null;
@@ -43,7 +43,7 @@ export type WarehouseMinAggregateOutputType = {
 };
 
 export type WarehouseMaxAggregateOutputType = {
-    id: bigint | null;
+    id: number | null;
     name: string | null;
     address: string | null;
     createdAt: Date | null;
@@ -186,7 +186,7 @@ export type WarehouseGroupByArgs<
 };
 
 export type WarehouseGroupByOutputType = {
-    id: bigint;
+    id: number;
     name: string;
     address: string | null;
     createdAt: Date;
@@ -219,7 +219,7 @@ export type WarehouseWhereInput = {
     AND?: Prisma.WarehouseWhereInput | Prisma.WarehouseWhereInput[];
     OR?: Prisma.WarehouseWhereInput[];
     NOT?: Prisma.WarehouseWhereInput | Prisma.WarehouseWhereInput[];
-    id?: Prisma.BigIntFilter<"Warehouse"> | bigint | number;
+    id?: Prisma.IntFilter<"Warehouse"> | number;
     name?: Prisma.StringFilter<"Warehouse"> | string;
     address?: Prisma.StringNullableFilter<"Warehouse"> | string | null;
     createdAt?: Prisma.DateTimeFilter<"Warehouse"> | Date | string;
@@ -240,7 +240,7 @@ export type WarehouseOrderByWithRelationInput = {
 
 export type WarehouseWhereUniqueInput = Prisma.AtLeast<
     {
-        id?: bigint | number;
+        id?: number;
         AND?: Prisma.WarehouseWhereInput | Prisma.WarehouseWhereInput[];
         OR?: Prisma.WarehouseWhereInput[];
         NOT?: Prisma.WarehouseWhereInput | Prisma.WarehouseWhereInput[];
@@ -275,7 +275,7 @@ export type WarehouseScalarWhereWithAggregatesInput = {
     NOT?:
         | Prisma.WarehouseScalarWhereWithAggregatesInput
         | Prisma.WarehouseScalarWhereWithAggregatesInput[];
-    id?: Prisma.BigIntWithAggregatesFilter<"Warehouse"> | bigint | number;
+    id?: Prisma.IntWithAggregatesFilter<"Warehouse"> | number;
     name?: Prisma.StringWithAggregatesFilter<"Warehouse"> | string;
     address?:
         | Prisma.StringNullableWithAggregatesFilter<"Warehouse">
@@ -292,7 +292,6 @@ export type WarehouseScalarWhereWithAggregatesInput = {
 };
 
 export type WarehouseCreateInput = {
-    id?: bigint | number;
     name: string;
     address?: string | null;
     createdAt?: Date | string;
@@ -302,7 +301,7 @@ export type WarehouseCreateInput = {
 };
 
 export type WarehouseUncheckedCreateInput = {
-    id?: bigint | number;
+    id?: number;
     name: string;
     address?: string | null;
     createdAt?: Date | string;
@@ -312,7 +311,6 @@ export type WarehouseUncheckedCreateInput = {
 };
 
 export type WarehouseUpdateInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -322,7 +320,7 @@ export type WarehouseUpdateInput = {
 };
 
 export type WarehouseUncheckedUpdateInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -332,7 +330,7 @@ export type WarehouseUncheckedUpdateInput = {
 };
 
 export type WarehouseCreateManyInput = {
-    id?: bigint | number;
+    id?: number;
     name: string;
     address?: string | null;
     createdAt?: Date | string;
@@ -340,7 +338,6 @@ export type WarehouseCreateManyInput = {
 };
 
 export type WarehouseUpdateManyMutationInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -348,7 +345,7 @@ export type WarehouseUpdateManyMutationInput = {
 };
 
 export type WarehouseUncheckedUpdateManyInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -392,12 +389,12 @@ export type WarehouseScalarRelationFilter = {
     isNot?: Prisma.WarehouseWhereInput;
 };
 
-export type BigIntFieldUpdateOperationsInput = {
-    set?: bigint | number;
-    increment?: bigint | number;
-    decrement?: bigint | number;
-    multiply?: bigint | number;
-    divide?: bigint | number;
+export type IntFieldUpdateOperationsInput = {
+    set?: number;
+    increment?: number;
+    decrement?: number;
+    multiply?: number;
+    divide?: number;
 };
 
 export type WarehouseCreateNestedOneWithoutMembershipsInput = {
@@ -453,7 +450,6 @@ export type WarehouseUpdateOneRequiredWithoutInventoriesNestedInput = {
 };
 
 export type WarehouseCreateWithoutMembershipsInput = {
-    id?: bigint | number;
     name: string;
     address?: string | null;
     createdAt?: Date | string;
@@ -462,7 +458,7 @@ export type WarehouseCreateWithoutMembershipsInput = {
 };
 
 export type WarehouseUncheckedCreateWithoutMembershipsInput = {
-    id?: bigint | number;
+    id?: number;
     name: string;
     address?: string | null;
     createdAt?: Date | string;
@@ -499,7 +495,6 @@ export type WarehouseUpdateToOneWithWhereWithoutMembershipsInput = {
 };
 
 export type WarehouseUpdateWithoutMembershipsInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -508,7 +503,7 @@ export type WarehouseUpdateWithoutMembershipsInput = {
 };
 
 export type WarehouseUncheckedUpdateWithoutMembershipsInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -517,7 +512,6 @@ export type WarehouseUncheckedUpdateWithoutMembershipsInput = {
 };
 
 export type WarehouseCreateWithoutInventoriesInput = {
-    id?: bigint | number;
     name: string;
     address?: string | null;
     createdAt?: Date | string;
@@ -526,7 +520,7 @@ export type WarehouseCreateWithoutInventoriesInput = {
 };
 
 export type WarehouseUncheckedCreateWithoutInventoriesInput = {
-    id?: bigint | number;
+    id?: number;
     name: string;
     address?: string | null;
     createdAt?: Date | string;
@@ -563,7 +557,6 @@ export type WarehouseUpdateToOneWithWhereWithoutInventoriesInput = {
 };
 
 export type WarehouseUpdateWithoutInventoriesInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -572,7 +565,7 @@ export type WarehouseUpdateWithoutInventoriesInput = {
 };
 
 export type WarehouseUncheckedUpdateWithoutInventoriesInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -718,7 +711,7 @@ export type $WarehousePayload<
     };
     scalars: runtime.Types.Extensions.GetPayloadResult<
         {
-            id: bigint;
+            id: number;
             name: string;
             address: string | null;
             createdAt: Date;
@@ -1340,7 +1333,7 @@ export interface Prisma__WarehouseClient<
  * Fields of the Warehouse model
  */
 export interface WarehouseFieldRefs {
-    readonly id: Prisma.FieldRef<"Warehouse", "BigInt">;
+    readonly id: Prisma.FieldRef<"Warehouse", "Int">;
     readonly name: Prisma.FieldRef<"Warehouse", "String">;
     readonly address: Prisma.FieldRef<"Warehouse", "String">;
     readonly createdAt: Prisma.FieldRef<"Warehouse", "DateTime">;

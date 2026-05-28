@@ -32,23 +32,23 @@ export type MembershipAvgAggregateOutputType = {
 };
 
 export type MembershipSumAggregateOutputType = {
-    id: bigint | null;
-    warehouseId: bigint | null;
+    id: number | null;
+    warehouseId: number | null;
 };
 
 export type MembershipMinAggregateOutputType = {
-    id: bigint | null;
+    id: number | null;
     userId: string | null;
-    warehouseId: bigint | null;
+    warehouseId: number | null;
     role: $Enums.Role | null;
     createdAt: Date | null;
     updatedAt: Date | null;
 };
 
 export type MembershipMaxAggregateOutputType = {
-    id: bigint | null;
+    id: number | null;
     userId: string | null;
-    warehouseId: bigint | null;
+    warehouseId: number | null;
     role: $Enums.Role | null;
     createdAt: Date | null;
     updatedAt: Date | null;
@@ -196,9 +196,9 @@ export type MembershipGroupByArgs<
 };
 
 export type MembershipGroupByOutputType = {
-    id: bigint;
+    id: number;
     userId: string;
-    warehouseId: bigint;
+    warehouseId: number;
     role: $Enums.Role;
     createdAt: Date;
     updatedAt: Date;
@@ -233,9 +233,9 @@ export type MembershipWhereInput = {
     AND?: Prisma.MembershipWhereInput | Prisma.MembershipWhereInput[];
     OR?: Prisma.MembershipWhereInput[];
     NOT?: Prisma.MembershipWhereInput | Prisma.MembershipWhereInput[];
-    id?: Prisma.BigIntFilter<"Membership"> | bigint | number;
+    id?: Prisma.IntFilter<"Membership"> | number;
     userId?: Prisma.StringFilter<"Membership"> | string;
-    warehouseId?: Prisma.BigIntFilter<"Membership"> | bigint | number;
+    warehouseId?: Prisma.IntFilter<"Membership"> | number;
     role?: Prisma.EnumRoleFilter<"Membership"> | $Enums.Role;
     createdAt?: Prisma.DateTimeFilter<"Membership"> | Date | string;
     updatedAt?: Prisma.DateTimeFilter<"Membership"> | Date | string;
@@ -259,12 +259,12 @@ export type MembershipOrderByWithRelationInput = {
 
 export type MembershipWhereUniqueInput = Prisma.AtLeast<
     {
-        id?: bigint | number;
+        id?: number;
         AND?: Prisma.MembershipWhereInput | Prisma.MembershipWhereInput[];
         OR?: Prisma.MembershipWhereInput[];
         NOT?: Prisma.MembershipWhereInput | Prisma.MembershipWhereInput[];
         userId?: Prisma.StringFilter<"Membership"> | string;
-        warehouseId?: Prisma.BigIntFilter<"Membership"> | bigint | number;
+        warehouseId?: Prisma.IntFilter<"Membership"> | number;
         role?: Prisma.EnumRoleFilter<"Membership"> | $Enums.Role;
         createdAt?: Prisma.DateTimeFilter<"Membership"> | Date | string;
         updatedAt?: Prisma.DateTimeFilter<"Membership"> | Date | string;
@@ -302,12 +302,9 @@ export type MembershipScalarWhereWithAggregatesInput = {
     NOT?:
         | Prisma.MembershipScalarWhereWithAggregatesInput
         | Prisma.MembershipScalarWhereWithAggregatesInput[];
-    id?: Prisma.BigIntWithAggregatesFilter<"Membership"> | bigint | number;
+    id?: Prisma.IntWithAggregatesFilter<"Membership"> | number;
     userId?: Prisma.StringWithAggregatesFilter<"Membership"> | string;
-    warehouseId?:
-        | Prisma.BigIntWithAggregatesFilter<"Membership">
-        | bigint
-        | number;
+    warehouseId?: Prisma.IntWithAggregatesFilter<"Membership"> | number;
     role?: Prisma.EnumRoleWithAggregatesFilter<"Membership"> | $Enums.Role;
     createdAt?:
         | Prisma.DateTimeWithAggregatesFilter<"Membership">
@@ -320,7 +317,6 @@ export type MembershipScalarWhereWithAggregatesInput = {
 };
 
 export type MembershipCreateInput = {
-    id?: bigint | number;
     role: $Enums.Role;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -329,16 +325,15 @@ export type MembershipCreateInput = {
 };
 
 export type MembershipUncheckedCreateInput = {
-    id?: bigint | number;
+    id?: number;
     userId: string;
-    warehouseId: bigint | number;
+    warehouseId: number;
     role: $Enums.Role;
     createdAt?: Date | string;
     updatedAt?: Date | string;
 };
 
 export type MembershipUpdateInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -347,34 +342,33 @@ export type MembershipUpdateInput = {
 };
 
 export type MembershipUncheckedUpdateInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
     userId?: Prisma.StringFieldUpdateOperationsInput | string;
-    warehouseId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    warehouseId?: Prisma.IntFieldUpdateOperationsInput | number;
     role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 
 export type MembershipCreateManyInput = {
-    id?: bigint | number;
+    id?: number;
     userId: string;
-    warehouseId: bigint | number;
+    warehouseId: number;
     role: $Enums.Role;
     createdAt?: Date | string;
     updatedAt?: Date | string;
 };
 
 export type MembershipUpdateManyMutationInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 
 export type MembershipUncheckedUpdateManyInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
     userId?: Prisma.StringFieldUpdateOperationsInput | string;
-    warehouseId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    warehouseId?: Prisma.IntFieldUpdateOperationsInput | number;
     role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -652,7 +646,6 @@ export type EnumRoleFieldUpdateOperationsInput = {
 };
 
 export type MembershipCreateWithoutUserInput = {
-    id?: bigint | number;
     role: $Enums.Role;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -660,8 +653,8 @@ export type MembershipCreateWithoutUserInput = {
 };
 
 export type MembershipUncheckedCreateWithoutUserInput = {
-    id?: bigint | number;
-    warehouseId: bigint | number;
+    id?: number;
+    warehouseId: number;
     role: $Enums.Role;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -718,16 +711,15 @@ export type MembershipScalarWhereInput = {
     NOT?:
         | Prisma.MembershipScalarWhereInput
         | Prisma.MembershipScalarWhereInput[];
-    id?: Prisma.BigIntFilter<"Membership"> | bigint | number;
+    id?: Prisma.IntFilter<"Membership"> | number;
     userId?: Prisma.StringFilter<"Membership"> | string;
-    warehouseId?: Prisma.BigIntFilter<"Membership"> | bigint | number;
+    warehouseId?: Prisma.IntFilter<"Membership"> | number;
     role?: Prisma.EnumRoleFilter<"Membership"> | $Enums.Role;
     createdAt?: Prisma.DateTimeFilter<"Membership"> | Date | string;
     updatedAt?: Prisma.DateTimeFilter<"Membership"> | Date | string;
 };
 
 export type MembershipCreateWithoutWarehouseInput = {
-    id?: bigint | number;
     role: $Enums.Role;
     createdAt?: Date | string;
     updatedAt?: Date | string;
@@ -735,7 +727,7 @@ export type MembershipCreateWithoutWarehouseInput = {
 };
 
 export type MembershipUncheckedCreateWithoutWarehouseInput = {
-    id?: bigint | number;
+    id?: number;
     userId: string;
     role: $Enums.Role;
     createdAt?: Date | string;
@@ -786,15 +778,14 @@ export type MembershipUpdateManyWithWhereWithoutWarehouseInput = {
 };
 
 export type MembershipCreateManyUserInput = {
-    id?: bigint | number;
-    warehouseId: bigint | number;
+    id?: number;
+    warehouseId: number;
     role: $Enums.Role;
     createdAt?: Date | string;
     updatedAt?: Date | string;
 };
 
 export type MembershipUpdateWithoutUserInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -802,23 +793,23 @@ export type MembershipUpdateWithoutUserInput = {
 };
 
 export type MembershipUncheckedUpdateWithoutUserInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
-    warehouseId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    warehouseId?: Prisma.IntFieldUpdateOperationsInput | number;
     role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 
 export type MembershipUncheckedUpdateManyWithoutUserInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
-    warehouseId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    warehouseId?: Prisma.IntFieldUpdateOperationsInput | number;
     role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
 
 export type MembershipCreateManyWarehouseInput = {
-    id?: bigint | number;
+    id?: number;
     userId: string;
     role: $Enums.Role;
     createdAt?: Date | string;
@@ -826,7 +817,6 @@ export type MembershipCreateManyWarehouseInput = {
 };
 
 export type MembershipUpdateWithoutWarehouseInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
     updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -834,7 +824,7 @@ export type MembershipUpdateWithoutWarehouseInput = {
 };
 
 export type MembershipUncheckedUpdateWithoutWarehouseInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
     userId?: Prisma.StringFieldUpdateOperationsInput | string;
     role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -842,7 +832,7 @@ export type MembershipUncheckedUpdateWithoutWarehouseInput = {
 };
 
 export type MembershipUncheckedUpdateManyWithoutWarehouseInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
     userId?: Prisma.StringFieldUpdateOperationsInput | string;
     role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role;
     createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
@@ -949,9 +939,9 @@ export type $MembershipPayload<
     };
     scalars: runtime.Types.Extensions.GetPayloadResult<
         {
-            id: bigint;
+            id: number;
             userId: string;
-            warehouseId: bigint;
+            warehouseId: number;
             role: $Enums.Role;
             createdAt: Date;
             updatedAt: Date;
@@ -1581,9 +1571,9 @@ export interface Prisma__MembershipClient<
  * Fields of the Membership model
  */
 export interface MembershipFieldRefs {
-    readonly id: Prisma.FieldRef<"Membership", "BigInt">;
+    readonly id: Prisma.FieldRef<"Membership", "Int">;
     readonly userId: Prisma.FieldRef<"Membership", "String">;
-    readonly warehouseId: Prisma.FieldRef<"Membership", "BigInt">;
+    readonly warehouseId: Prisma.FieldRef<"Membership", "Int">;
     readonly role: Prisma.FieldRef<"Membership", "Role">;
     readonly createdAt: Prisma.FieldRef<"Membership", "DateTime">;
     readonly updatedAt: Prisma.FieldRef<"Membership", "DateTime">;

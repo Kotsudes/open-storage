@@ -3,7 +3,7 @@ import { userSchema } from "./user";
 import { warehouseSchema } from "./warehouse";
 
 export const membershipNestedSchema = z.object({
-    id: z.bigint(),
+    id: z.number(),
 
     user: userSchema,
 
@@ -17,7 +17,7 @@ export const membershipNestedSchema = z.object({
 export type MembershipNested = z.infer<typeof membershipNestedSchema>;
 
 export const membershipSchema = z.object({
-    id: z.bigint(),
+    id: z.number(),
 
     user: userSchema,
 

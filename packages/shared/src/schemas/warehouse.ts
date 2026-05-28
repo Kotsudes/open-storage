@@ -3,7 +3,7 @@ import { membershipNestedSchema } from "./membership";
 import { inventoryItemNestedSchema } from "./inventoryItem";
 
 export const warehouseSchema = z.object({
-    id: z.bigint(),
+    id: z.number(),
 
     name: z.string().min(1),
 

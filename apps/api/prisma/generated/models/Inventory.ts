@@ -33,14 +33,14 @@ export type InventoryAvgAggregateOutputType = {
 };
 
 export type InventorySumAggregateOutputType = {
-    id: bigint | null;
-    warehouseId: bigint | null;
+    id: number | null;
+    warehouseId: number | null;
     temperature: number | null;
 };
 
 export type InventoryMinAggregateOutputType = {
-    id: bigint | null;
-    warehouseId: bigint | null;
+    id: number | null;
+    warehouseId: number | null;
     name: string | null;
     temperature: number | null;
     type: $Enums.InventoryType | null;
@@ -49,8 +49,8 @@ export type InventoryMinAggregateOutputType = {
 };
 
 export type InventoryMaxAggregateOutputType = {
-    id: bigint | null;
-    warehouseId: bigint | null;
+    id: number | null;
+    warehouseId: number | null;
     name: string | null;
     temperature: number | null;
     type: $Enums.InventoryType | null;
@@ -206,8 +206,8 @@ export type InventoryGroupByArgs<
 };
 
 export type InventoryGroupByOutputType = {
-    id: bigint;
-    warehouseId: bigint;
+    id: number;
+    warehouseId: number;
     name: string;
     temperature: number | null;
     type: $Enums.InventoryType;
@@ -241,8 +241,8 @@ export type InventoryWhereInput = {
     AND?: Prisma.InventoryWhereInput | Prisma.InventoryWhereInput[];
     OR?: Prisma.InventoryWhereInput[];
     NOT?: Prisma.InventoryWhereInput | Prisma.InventoryWhereInput[];
-    id?: Prisma.BigIntFilter<"Inventory"> | bigint | number;
-    warehouseId?: Prisma.BigIntFilter<"Inventory"> | bigint | number;
+    id?: Prisma.IntFilter<"Inventory"> | number;
+    warehouseId?: Prisma.IntFilter<"Inventory"> | number;
     name?: Prisma.StringFilter<"Inventory"> | string;
     temperature?: Prisma.FloatNullableFilter<"Inventory"> | number | null;
     type?: Prisma.EnumInventoryTypeFilter<"Inventory"> | $Enums.InventoryType;
@@ -269,11 +269,11 @@ export type InventoryOrderByWithRelationInput = {
 
 export type InventoryWhereUniqueInput = Prisma.AtLeast<
     {
-        id?: bigint | number;
+        id?: number;
         AND?: Prisma.InventoryWhereInput | Prisma.InventoryWhereInput[];
         OR?: Prisma.InventoryWhereInput[];
         NOT?: Prisma.InventoryWhereInput | Prisma.InventoryWhereInput[];
-        warehouseId?: Prisma.BigIntFilter<"Inventory"> | bigint | number;
+        warehouseId?: Prisma.IntFilter<"Inventory"> | number;
         name?: Prisma.StringFilter<"Inventory"> | string;
         temperature?: Prisma.FloatNullableFilter<"Inventory"> | number | null;
         type?:
@@ -313,11 +313,8 @@ export type InventoryScalarWhereWithAggregatesInput = {
     NOT?:
         | Prisma.InventoryScalarWhereWithAggregatesInput
         | Prisma.InventoryScalarWhereWithAggregatesInput[];
-    id?: Prisma.BigIntWithAggregatesFilter<"Inventory"> | bigint | number;
-    warehouseId?:
-        | Prisma.BigIntWithAggregatesFilter<"Inventory">
-        | bigint
-        | number;
+    id?: Prisma.IntWithAggregatesFilter<"Inventory"> | number;
+    warehouseId?: Prisma.IntWithAggregatesFilter<"Inventory"> | number;
     name?: Prisma.StringWithAggregatesFilter<"Inventory"> | string;
     temperature?:
         | Prisma.FloatNullableWithAggregatesFilter<"Inventory">
@@ -337,7 +334,6 @@ export type InventoryScalarWhereWithAggregatesInput = {
 };
 
 export type InventoryCreateInput = {
-    id?: bigint | number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
@@ -348,8 +344,8 @@ export type InventoryCreateInput = {
 };
 
 export type InventoryUncheckedCreateInput = {
-    id?: bigint | number;
-    warehouseId: bigint | number;
+    id?: number;
+    warehouseId: number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
@@ -359,7 +355,6 @@ export type InventoryUncheckedCreateInput = {
 };
 
 export type InventoryUpdateInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     temperature?:
         | Prisma.NullableFloatFieldUpdateOperationsInput
@@ -375,8 +370,8 @@ export type InventoryUpdateInput = {
 };
 
 export type InventoryUncheckedUpdateInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
-    warehouseId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    warehouseId?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     temperature?:
         | Prisma.NullableFloatFieldUpdateOperationsInput
@@ -391,8 +386,8 @@ export type InventoryUncheckedUpdateInput = {
 };
 
 export type InventoryCreateManyInput = {
-    id?: bigint | number;
-    warehouseId: bigint | number;
+    id?: number;
+    warehouseId: number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
@@ -401,7 +396,6 @@ export type InventoryCreateManyInput = {
 };
 
 export type InventoryUpdateManyMutationInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     temperature?:
         | Prisma.NullableFloatFieldUpdateOperationsInput
@@ -415,8 +409,8 @@ export type InventoryUpdateManyMutationInput = {
 };
 
 export type InventoryUncheckedUpdateManyInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
-    warehouseId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    warehouseId?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     temperature?:
         | Prisma.NullableFloatFieldUpdateOperationsInput
@@ -631,7 +625,6 @@ export type InventoryUpdateOneRequiredWithoutInventoryItemsNestedInput = {
 };
 
 export type InventoryCreateWithoutWarehouseInput = {
-    id?: bigint | number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
@@ -641,7 +634,7 @@ export type InventoryCreateWithoutWarehouseInput = {
 };
 
 export type InventoryUncheckedCreateWithoutWarehouseInput = {
-    id?: bigint | number;
+    id?: number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
@@ -697,8 +690,8 @@ export type InventoryScalarWhereInput = {
     AND?: Prisma.InventoryScalarWhereInput | Prisma.InventoryScalarWhereInput[];
     OR?: Prisma.InventoryScalarWhereInput[];
     NOT?: Prisma.InventoryScalarWhereInput | Prisma.InventoryScalarWhereInput[];
-    id?: Prisma.BigIntFilter<"Inventory"> | bigint | number;
-    warehouseId?: Prisma.BigIntFilter<"Inventory"> | bigint | number;
+    id?: Prisma.IntFilter<"Inventory"> | number;
+    warehouseId?: Prisma.IntFilter<"Inventory"> | number;
     name?: Prisma.StringFilter<"Inventory"> | string;
     temperature?: Prisma.FloatNullableFilter<"Inventory"> | number | null;
     type?: Prisma.EnumInventoryTypeFilter<"Inventory"> | $Enums.InventoryType;
@@ -707,7 +700,6 @@ export type InventoryScalarWhereInput = {
 };
 
 export type InventoryCreateWithoutInventoryItemsInput = {
-    id?: bigint | number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
@@ -717,8 +709,8 @@ export type InventoryCreateWithoutInventoryItemsInput = {
 };
 
 export type InventoryUncheckedCreateWithoutInventoryItemsInput = {
-    id?: bigint | number;
-    warehouseId: bigint | number;
+    id?: number;
+    warehouseId: number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
@@ -755,7 +747,6 @@ export type InventoryUpdateToOneWithWhereWithoutInventoryItemsInput = {
 };
 
 export type InventoryUpdateWithoutInventoryItemsInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     temperature?:
         | Prisma.NullableFloatFieldUpdateOperationsInput
@@ -770,8 +761,8 @@ export type InventoryUpdateWithoutInventoryItemsInput = {
 };
 
 export type InventoryUncheckedUpdateWithoutInventoryItemsInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
-    warehouseId?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
+    warehouseId?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     temperature?:
         | Prisma.NullableFloatFieldUpdateOperationsInput
@@ -785,7 +776,7 @@ export type InventoryUncheckedUpdateWithoutInventoryItemsInput = {
 };
 
 export type InventoryCreateManyWarehouseInput = {
-    id?: bigint | number;
+    id?: number;
     name: string;
     temperature?: number | null;
     type: $Enums.InventoryType;
@@ -794,7 +785,6 @@ export type InventoryCreateManyWarehouseInput = {
 };
 
 export type InventoryUpdateWithoutWarehouseInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     temperature?:
         | Prisma.NullableFloatFieldUpdateOperationsInput
@@ -809,7 +799,7 @@ export type InventoryUpdateWithoutWarehouseInput = {
 };
 
 export type InventoryUncheckedUpdateWithoutWarehouseInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     temperature?:
         | Prisma.NullableFloatFieldUpdateOperationsInput
@@ -824,7 +814,7 @@ export type InventoryUncheckedUpdateWithoutWarehouseInput = {
 };
 
 export type InventoryUncheckedUpdateManyWithoutWarehouseInput = {
-    id?: Prisma.BigIntFieldUpdateOperationsInput | bigint | number;
+    id?: Prisma.IntFieldUpdateOperationsInput | number;
     name?: Prisma.StringFieldUpdateOperationsInput | string;
     temperature?:
         | Prisma.NullableFloatFieldUpdateOperationsInput
@@ -983,8 +973,8 @@ export type $InventoryPayload<
     };
     scalars: runtime.Types.Extensions.GetPayloadResult<
         {
-            id: bigint;
-            warehouseId: bigint;
+            id: number;
+            warehouseId: number;
             name: string;
             temperature: number | null;
             type: $Enums.InventoryType;
@@ -1610,8 +1600,8 @@ export interface Prisma__InventoryClient<
  * Fields of the Inventory model
  */
 export interface InventoryFieldRefs {
-    readonly id: Prisma.FieldRef<"Inventory", "BigInt">;
-    readonly warehouseId: Prisma.FieldRef<"Inventory", "BigInt">;
+    readonly id: Prisma.FieldRef<"Inventory", "Int">;
+    readonly warehouseId: Prisma.FieldRef<"Inventory", "Int">;
     readonly name: Prisma.FieldRef<"Inventory", "String">;
     readonly temperature: Prisma.FieldRef<"Inventory", "Float">;
     readonly type: Prisma.FieldRef<"Inventory", "InventoryType">;

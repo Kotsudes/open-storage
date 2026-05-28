@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, Logger } from "@nestjs/common";
 import { PrismaService } from "@/modules/prisma/prisma.service";
 
 import { CreateWarehouseDto } from "./dto/create-warehouse.dto";
@@ -8,10 +8,26 @@ import { UpdateWarehouseDto } from "./dto/update-warehouse.dto";
 export class WarehousesService {
     constructor(private prisma: PrismaService) {}
 
-    create(createWarehouseDto: CreateWarehouseDto) {
-        return this.prisma.warehouse.create({
-            data: createWarehouseDto,
+    private readonly logger = new Logger(WarehousesService.name);
+
+    async create(createWarehouseDto: CreateWarehouseDto, userId: string) {
+        const warehouse = await this.prisma.$transaction(async (tx) => {
+            const warehouse = await tx.warehouse.create({
+                data: createWarehouseDto,
+            });
+
+            await tx.membership.create({
+                data: {
+                    userId: userId,
+                    warehouseId: warehouse.id,
+                    role: "OWNER",
+                },
+            });
+
+            return warehouse;
         });
+
+        return warehouse;
     }
 
     findAll() {
@@ -21,6 +37,19 @@ export class WarehousesService {
     findOne(id: number) {
         return this.prisma.warehouse.findUnique({
             where: { id },
+        });
+    }
+
+    findUserWarehouses(userId: string) {
+        this.logger.log("test");
+        return this.prisma.warehouse.findMany({
+            where: {
+                memberships: {
+                    some: {
+                        userId: userId,
+                    },
+                },
+            },
         });
     }
 

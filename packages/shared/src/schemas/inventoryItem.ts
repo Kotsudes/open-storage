@@ -3,7 +3,7 @@ import { inventoryNestedSchema, inventorySchema } from "./inventory";
 import { itemSchema } from "./item";
 
 export const inventoryItemNestedSchema = z.object({
-    id: z.bigint(),
+    id: z.number(),
     quantity: z.number().nonnegative(),
     expiryDate: z.date().optional(),
     createdAt: z.date(),
@@ -12,7 +12,7 @@ export const inventoryItemNestedSchema = z.object({
 export type InventoryItemNested = z.infer<typeof inventoryItemNestedSchema>;
 
 export const inventoryItemSchema = z.object({
-    id: z.bigint(),
+    id: z.number(),
 
     inventory: z.lazy(() => inventorySchema),
 

@@ -406,14 +406,6 @@ export type UnitScalarRelationFilter = {
     isNot?: Prisma.UnitWhereInput;
 };
 
-export type IntFieldUpdateOperationsInput = {
-    set?: number;
-    increment?: number;
-    decrement?: number;
-    multiply?: number;
-    divide?: number;
-};
-
 export type UnitCreateNestedOneWithoutItemsInput = {
     create?: Prisma.XOR<
         Prisma.UnitCreateWithoutItemsInput,

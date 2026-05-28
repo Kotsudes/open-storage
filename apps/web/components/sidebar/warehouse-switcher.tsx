@@ -1,12 +1,7 @@
 "use client";
 
-import * as React from "react";
-import {
-    AudioWaveform,
-    ChevronsUpDown,
-    Command,
-    GalleryVerticalEnd,
-} from "lucide-react";
+import { useState } from "react";
+import { AudioWaveform, ChevronsUpDown, Plus } from "lucide-react";
 
 import {
     DropdownMenu,
@@ -25,31 +20,32 @@ import {
     useSidebar,
 } from "@/components/ui/sidebar";
 import WarehouseCreateSheet from "./warehouse-create-sheet";
+import { useQuery } from "@tanstack/react-query";
+import { Warehouse } from "@open-storage/shared";
+import { authClient } from "@/lib/auth-client";
+import { apiRequest } from "@/lib/api";
 
 export function WarehouseSwitcher() {
     const { isMobile } = useSidebar();
+    const { data: session, isPending } = authClient.useSession();
 
-    const warehouse = [
-        {
-            name: "Acme Inc",
-            logo: GalleryVerticalEnd,
-            plan: "Enterprise",
+    const { data: warehouses } = useQuery<Warehouse[]>({
+        queryKey: ["warehouses", session?.user.id],
+        enabled: !!session?.user.id,
+        queryFn: async () => {
+            return apiRequest<Warehouse[]>(
+                "/warehouses/users",
+                "POST",
+                undefined
+            );
         },
-        {
-            name: "Acme Corp.",
-            logo: AudioWaveform,
-            plan: "Startup",
-        },
-        {
-            name: "Evil Corp.",
-            logo: Command,
-            plan: "Free",
-        },
-    ];
+    });
 
-    const [activeTeam, setActiveTeam] = React.useState(warehouse[0]);
+    const [activeWarehouse, setActiveWarehouse] = useState(0);
 
-    if (!activeTeam) {
+    const [open, setOpen] = useState(false);
+
+    if (isPending || !session || !warehouses) {
         return null;
     }
 
@@ -64,14 +60,14 @@ export function WarehouseSwitcher() {
                                 className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
                             >
                                 <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                                    <activeTeam.logo className="size-4" />
+                                    <AudioWaveform className="size-4" />
                                 </div>
                                 <div className="grid flex-1 text-left text-sm leading-tight">
                                     <span className="truncate font-medium">
-                                        {activeTeam.name}
+                                        {warehouses[activeWarehouse]?.name}
                                     </span>
                                     <span className="truncate text-xs">
-                                        {activeTeam.plan}
+                                        {warehouses[activeWarehouse]?.address}
                                     </span>
                                 </div>
                                 <ChevronsUpDown className="ml-auto" />
@@ -89,16 +85,16 @@ export function WarehouseSwitcher() {
                             <DropdownMenuLabel className="text-muted-foreground text-xs">
                                 Warehouses
                             </DropdownMenuLabel>
-                            {warehouse.map((team, index) => (
+                            {warehouses?.map((warehouse, index) => (
                                 <DropdownMenuItem
-                                    key={team.name}
-                                    onClick={() => setActiveTeam(team)}
+                                    key={warehouse.name}
+                                    onClick={() => setActiveWarehouse(index)}
                                     className="gap-2 p-2"
                                 >
                                     <div className="flex size-6 items-center justify-center rounded-md border">
-                                        <team.logo className="size-3.5 shrink-0" />
+                                        <AudioWaveform className="size-3.5 shrink-0" />
                                     </div>
-                                    {team.name}
+                                    {warehouse.name}
                                     <DropdownMenuShortcut>
                                         ⌘{index + 1}
                                     </DropdownMenuShortcut>
@@ -106,11 +102,23 @@ export function WarehouseSwitcher() {
                             ))}
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />
-
-                        <WarehouseCreateSheet />
+                        <DropdownMenuItem
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setOpen(true);
+                            }}
+                        >
+                            <div className="flex size-6 items-center justify-center rounded-md border bg-transparent">
+                                <Plus className="size-4" />
+                            </div>
+                            <div className="text-muted-foreground font-medium">
+                                Add a warehouse
+                            </div>
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             </SidebarMenuItem>
+            <WarehouseCreateSheet open={open} setOpen={setOpen} />
         </SidebarMenu>
     );
 }
